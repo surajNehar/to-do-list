@@ -1,5 +1,4 @@
 import React from "react";
-import { Fragment } from "react";
 import styles from "./todo-list.module.css"
 import { TiDeleteOutline } from 'react-icons/ti';
 //TiDeleteOutline
@@ -7,9 +6,10 @@ import { TiDeleteOutline } from 'react-icons/ti';
 
 
 export default function TodoList(props){
-   
-
-
+    function handleDelete() {
+        props.onSelect(props.index);
+      }
+    
    return(
     <>
     <div className={styles.todo_style}>
@@ -19,9 +19,7 @@ export default function TodoList(props){
         {props.text}
         <TiDeleteOutline 
          className={styles.iconstyle}
-         onClick={() => {
-            props.onselect(props.key)
-         }}
+         onClick={handleDelete}
          />
     </li>
     </div>
