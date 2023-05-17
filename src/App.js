@@ -16,10 +16,6 @@ function App() {
       setInputState('');
     }
   }
-
-  function deleteAllItems() {
-    setItems([]);
-  }
   
 
   function deleteItem(index) {
@@ -32,10 +28,9 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <div className='parent-container'>
-          <div className='child-container'>
-            <h4 className='heading'>Pending tasks</h4>
+      
+    <h4 className='heading'> Enter your name here</h4>
+
             <div>
               <ul>
                 {items.map((itemval, index) => (
@@ -48,28 +43,21 @@ function App() {
                 ))}
               </ul>
             </div>
+
             <div>
               <input
                 type='text'
                 className='inputStyle'
-                placeholder="Add a new task"
+                placeholder="add new user "
                 onChange={itemEvent}
                 value={inputState}
               />
               <button className='buttonStyle' onClick={addItems}>
-                Add
+                Submit
               </button>
-              </div>
-              <div>
-              <button className='buttonStyle2' onClick={deleteAllItems}>
-              Delete All
-            </button>
             </div>
-            
-          </div>
-        </div>
-      </header>
-    </div>
+  </div>          
+    
   );
 }
 
